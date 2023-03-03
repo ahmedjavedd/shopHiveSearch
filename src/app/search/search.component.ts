@@ -29,16 +29,6 @@ export class SearchComponent implements OnInit {
 
   onSearch() {
     this.searchText = this.searchForm.controls['searchQuery'].value
-    // this.http
-    //   .get<any[]>(
-    //     `https://www.shophive.com/magebig_ajaxsearch/ajax/index/?q=${this.searchForm.controls['searchQuery'].value}`,
-    //   )
-    //   .subscribe((products) => {
-    //     console.log(products)
-    //     this.products = Object.values(products)
-    //     console.log(this.products)
-    //
-    //   })
     this.service.postQuery(this.searchText).subscribe((res) => {
       this.products = Object.values(res)
       this.products.forEach((pro) => {
