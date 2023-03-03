@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+.w-100 {
+  width: 100%;
+}
+
+.flex-center {
+  display: flex;
+}
+
+.searchBtn {
+  background-color: #3578bc;
+  color: black;
+  font-weight: 500;
+  border: none;
+  margin-left: 10%;
+}
+
+.bg-grey {
+  background-color: #f1f1f1;
+}
+
+.itemText {
+  color: #3578bc;
+  font-weight: 500;
+}
+
+.b-5 {
+  font-weight: 700;
+}

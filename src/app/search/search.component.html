@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <h5>Welcome to Demo</h5>
+  <form [formGroup]="searchForm">
+    <div class="row">
+      <div class="col-6 col-md-6 col-sm-12">
+        <input
+          class="w-100"
+          type="text"
+          formControlName="searchQuery"
+          placeholder="Search..."
+        />
+      </div>
+      <div class="col-6 flex-center">
+        <button class="searchBtn" type="submit" (click)="onSearch()">
+          Search
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row mt-5">
+    <div class="col-12 bg-grey d-flex align-center">
+      <a>Home/</a>
+      <p>Search For: {{ searchText }}</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 bg-grey d-flex align-center">
+      <h2>Search Results For: {{ searchText }}</h2>
+    </div>
+    <b>{{ shopHiveData.length }} Products Found</b>
+  </div>
+
+  <div class="row">
+    <div
+      class="col-lg-4 col-md-6 col-sm-12 mt-4"
+      *ngFor="let prod of shopHiveData"
+    >
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="prod.image" alt="Card image cap" />
+        <div class="card-body">
+          <p class="card-text itemText">
+            {{ prod.name }}
+          </p>
+          <div class="b-5" [innerHTML]="[prod.price]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
