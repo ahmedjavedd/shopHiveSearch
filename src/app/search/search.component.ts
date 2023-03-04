@@ -14,6 +14,9 @@ export class SearchComponent implements OnInit {
   searchText: string
   products: any[] = []
   shopHiveData: any[] = []
+  pageNos = [1, 2, 3, 4, 5]
+  selectedValue: any
+  tempProd: any[] = []
   constructor(public http: HttpClient, public service: ApiService) {}
 
   ngOnInit(): void {
@@ -33,8 +36,13 @@ export class SearchComponent implements OnInit {
       this.products = Object.values(res)
       this.products.forEach((pro) => {
         this.shopHiveData = pro[0].data
+        this.tempProd = pro[0].data
         //     })
       })
     })
+  }
+
+  onSelect() {
+    this.shopHiveData = this.tempProd.slice(0, this.selectedValue)
   }
 }

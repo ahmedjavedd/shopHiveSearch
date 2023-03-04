@@ -13,7 +13,5 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {
-    // this.http.get()
-  }
+  ngOnInit() {}
 }

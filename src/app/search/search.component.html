@@ -25,10 +25,27 @@
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col-12 bg-grey d-flex align-center">
+    <div class="col-12 bg-grey align-center">
       <h2>Search Results For: {{ searchText }}</h2>
     </div>
-    <b>{{ shopHiveData.length }} Products Found</b>
+    <div class="row mt-4">
+      <div class="col-2">
+        <b>{{ shopHiveData.length }} Products Found</b>
+      </div>
+      <div class="col-6">
+        <div class="borderDiv w-15">
+          <span>Show</span>
+          <select
+            class="border-none w-48"
+            #value
+            [(ngModel)]="selectedValue"
+            (change)="onSelect()"
+          >
+            <option *ngFor="let id of pageNos" [ngValue]="id">{{ id }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="row">
